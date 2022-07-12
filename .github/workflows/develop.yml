@@ -4,23 +4,24 @@ on:
     branches:
       - main
 jobs:
-  name: Building iOS App
-  runs-on: macos-latest
-  needs:
-    - update_version
-  steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-
-    - name: Install xcode-install
-      env:
-        FASTLANE_USER: ${{ secrets.APPLE_USERNAMEE }}
-        FASTLANE_PASSWORD: ${{ secrets.APPLE_PASS }}
-      run: |
-        gem install fastlane
-        sudo gem install xcode-install -v 2.7.0
-        xcversion install 13.4.1
-
-    - run: xcodebuild -version
+  build:
+    name: Building iOS App
+    runs-on: macos-latest
+    needs:
+      - update_version
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+    
+      - name: Install xcode-install
+        env:
+          FASTLANE_USER: ${{ secrets.APPLE_USERNAMEE }}
+          FASTLANE_PASSWORD: ${{ secrets.APPLE_PASS }}
+        run: |
+          gem install fastlane
+          sudo gem install xcode-install -v 2.7.0
+          xcversion install 13.4.1
+    
+      - run: xcodebuild -version
