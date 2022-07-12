@@ -7,8 +7,6 @@ jobs:
   build:
     name: Building iOS App
     runs-on: macos-latest
-    needs:
-      - update_version
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -25,4 +23,5 @@ jobs:
           sudo gem install xcode-install -v 2.7.0
           xcversion install 13.4.1
     
-      - run: xcodebuild -version
+      - name: check
+        run: xcodebuild -version
