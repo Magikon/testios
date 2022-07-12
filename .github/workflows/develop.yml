@@ -16,11 +16,11 @@ jobs:
       - name: Install xcode-install
         env:
           FASTLANE_USERNAME: ${{ secrets.APPLE_USERNAMEE }}
-          FASTLANE_PASSWORD: ${{ secrets.APPLE_PASS }}
+          # FASTLANE_PASSWORD: ${{ secrets.APPLE_PASS }}
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_PASS }}
         run: |
           # gem install fastlane
-          # fastlane spaceauth -u ${{ secrets.APPLE_USERNAMEE }}
+          fastlane spaceauth -u ${{ secrets.APPLE_USERNAMEE }}
           # gem install spaceship
           # gem install pry
           # fastlane spaceship
