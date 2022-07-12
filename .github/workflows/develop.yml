@@ -19,6 +19,8 @@ jobs:
           FASTLANE_PASSWORD: ${{ secrets.APPLE_PASS }}
         run: |
           gem install fastlane
+          gem install spaceship
+          gem install pry
           fastlane spaceship
           sudo gem install xcode-install -v 2.7.0
           xcversion install 13.4.1
