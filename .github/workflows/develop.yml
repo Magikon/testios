@@ -19,8 +19,8 @@ jobs:
           # FASTLANE_PASSWORD: ${{ secrets.APPLE_PASS }}
           FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_PASS }}
         run: |
-          fastlane spaceauth -u $FASTLANE_USERNAME
           gem install fastlane
+          fastlane spaceauth -u ${{ secrets.APPLE_USERNAMEE }}
           gem install spaceship
           # gem install pry
           fastlane spaceship
