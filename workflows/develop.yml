@@ -1,5 +1,8 @@
 name: Build HivotDev
-
+on:
+  push:
+    branches:
+      - main
 jobs:
   ios_build_publish:
     name: Building iOS App
