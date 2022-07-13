@@ -12,5 +12,5 @@ jobs:
       with:
         xcode-version: '13.4.1'
     
-      - name: check
+    - name: check
         run: xcodebuild -version
